@@ -200,7 +200,35 @@ def aplicar_estilos():
     st.markdown("""
     <style>
     .main {
+        background-color: #ffffff;
+    }
+    
+    /* Mejora de contraste para tabs */
+    .stTabs [data-baseweb="tab-list"] {
         background-color: #f8f9fa;
+        border-bottom: 2px solid #dee2e6;
+        gap: 2px;
+    }
+    
+    .stTabs [data-baseweb="tab"] {
+        background-color: #ffffff;
+        color: #2d3748;
+        font-weight: 500;
+        border: 1px solid #dee2e6;
+        border-bottom: none;
+        padding: 0.5rem 1rem;
+    }
+    
+    .stTabs [data-baseweb="tab"]:hover {
+        background-color: #f1f5f9;
+        color: #1a202c;
+    }
+    
+    .stTabs [aria-selected="true"] {
+        background-color: #4a5568 !important;
+        color: #ffffff !important;
+        font-weight: 600;
+        border-color: #4a5568 !important;
     }
     
     .header-principal {
@@ -224,6 +252,15 @@ def aplicar_estilos():
         border-left: 3px solid #4a5568;
         margin: 1rem 0;
         box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+    
+    .concepto-card h4 {
+        color: #1a202c;
+        font-weight: 600;
+    }
+    
+    .concepto-card p {
+        color: #4a5568;
     }
     
     .ejercicio-container {
@@ -253,10 +290,16 @@ def aplicar_estilos():
     }
     
     .progreso-card {
-        background: #f1f5f9;
+        background: #f8f9fa;
         padding: 1.5rem;
         border-radius: 6px;
         margin: 1rem 0;
+        border: 1px solid #dee2e6;
+    }
+    
+    .progreso-card h4 {
+        color: #2d3748;
+        margin-bottom: 1rem;
     }
     
     .resultado-tabla {
@@ -273,8 +316,10 @@ def aplicar_estilos():
         padding: 1rem;
         margin: 1rem 0;
         border-radius: 4px;
+        color: #78350f;
     }
     
+    /* Botones con mejor contraste */
     .stButton > button {
         background: #4a5568;
         color: white;
@@ -287,13 +332,48 @@ def aplicar_estilos():
     
     .stButton > button:hover {
         background: #2d3748;
+        color: white;
     }
     
-    .stCode {
-        background-color: #1e293b !important;
-        color: #e2e8f0 !important;
+    /* Código con fondo claro para mejor legibilidad */
+    .stCode, pre {
+        background-color: #f7fafc !important;
+        color: #1a202c !important;
+        border: 1px solid #e2e8f0 !important;
         padding: 1rem !important;
         border-radius: 4px !important;
+    }
+    
+    /* Asegurar buen contraste en todo el texto */
+    p, li, span {
+        color: #2d3748;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: #1a202c;
+    }
+    
+    /* Radio buttons y checkboxes con mejor contraste */
+    .stRadio > label {
+        color: #2d3748 !important;
+    }
+    
+    .stCheckbox > label {
+        color: #2d3748 !important;
+    }
+    
+    /* Expander con mejor contraste */
+    .streamlit-expanderHeader {
+        background-color: #f8f9fa;
+        color: #1a202c !important;
+        border: 1px solid #dee2e6;
+    }
+    
+    /* Info, success, warning, error boxes */
+    .stAlert {
+        background-color: #f8f9fa;
+        color: #1a202c;
+        border: 1px solid #cbd5e0;
     }
     </style>
     """, unsafe_allow_html=True)
